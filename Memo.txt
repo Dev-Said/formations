@@ -1,0 +1,118 @@
+Relation 1..1
+Migration :
+
+COMPANY
+Pas de clé étrangère
+
+ADRESS
+Schema::table(’addresses’, function (Blueprint $table) {
+    $table->unsignedInteger(’company_id');
+    $table->foreign(’company_id')->references('id')->on('companies');
+});
+
+MODEL :
+ Classe Company :
+Public functiun comments () {
+	Return $this->hasOne(Address::class) ;
+}
+Classe Address :
+Public functiun article () {
+	Return $this->belongsTo(Company::class) ;
+}
+
+Accéder aux relations
+
+Accéder à l’adresse d’une company
+
+$my_company = Company::where(‘name’, ‘Narval’)->first() ;
+$my_company_address = $my_company->address ;
+
+//manipulation de l’adresse par exemple//
+
+$city = $my_company_address->city ;
+$my_company_address->country = ‘Belgique’ ;
+$my_company_address->save() ;
+
+Accéder à la company à qui appartient une adresse
+
+$address = Address ::first() ;
+$company_name = $address->company->name ;
+
+Insérer une relation en base de données
+
+$company = new Company ;
+$company->name = ‘BioTech’ ;
+$company->save() ;
+
+$address = new Address ;
+$address->city = ‘Wavre’ ;
+$address->country = ‘Belgique’ ;
+$company->address()->save($address) ;
+
+Mettre à jour une relation
+
+$company = Company ::find(11) ;
+$address = new Address ;
+$address->city = ‘Gembloux’ ;
+$address->country = ‘Belgique’ ;
+$company->address()->save($address) ;
+
+Relation 1..n
+
+Classe Article :
+Public functiun comments () {
+	Return $this->hasMany(Comment::class) ;
+}
+Classe Comment :
+Public functiun article () {
+	Return $this->belongsTo(Article::class) ;
+}
+
+Accéder aux commentaires d’un article :
+
+$article = Article::find(3) ;
+$comments = $articles->comments ;
+Foreach ($comments as $comment) {
+	echo $comment->title ;
+	echo $comment->text ;
+	etc… 
+}
+
+Accéder à l’article auquel se rapporte un commentaire :
+
+$comment = Comment ::first() ;
+Echo $comment->article->title ;
+
+Utilisation de where :
+
+$article = Article::first() ;
+$comments = $articles->comments()
+	->where(‘test’, ‘LIKE’, ‘Hello%’)
+	->get() ;
+
+Pour enregistrer save et saveMany
+
+$article = Article::first() ;
+$comment1 = Comment::new() ;
+$comment1->text = ‘Parfait’ ;
+$article->comments()->save($comment1) ;
+
+$comment2 = Comment::new() ;
+$comment2->text = ‘Moyen’ ;
+$comment3 = Comment::new() ;
+$comment3->text = ‘Mauvais’ ;
+$article->comments()->saveMany([
+	$comment2,
+	$comment3,
+]) ;
+
+
+
+
+
+
+
+
+
+
+

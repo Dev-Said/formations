@@ -1,0 +1,1 @@
+@each('questions.one', $questions, 'question')
