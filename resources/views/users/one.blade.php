@@ -1,12 +1,30 @@
-<div class="myClass" style="display: flex; align-items: center;">
-    <h2>{{$user->nom}}</h2>&nbsp;&nbsp;&nbsp;&nbsp;
-    <h4>{{$user->prenom}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;
-    <h4>{{$user->sexe}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;
-    <h4>{{$user->admin}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;
-    <h4>{{$user->email}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;
-    <form action="/users/{{ $user->id }}" method="post">
-        @csrf
-        @method('delete')
-        <input type="submit" value="Supprimer" name="DELETE">
-    </form>
-</div>
+<tr>
+    <td>
+        {{$user->nom}}
+    </td>
+    <td>
+        {{$user->prenom}}
+    </td>
+    <td>
+        {{$user->sexe}}
+    </td>
+    <td>
+        {{$user->admin}}
+    </td>
+    <td>
+        {{$user->email}}
+    </td>
+    <td>
+        <form action="/users/{{ $user->id }}" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" value="Supprimer" name="delete" class="supp">
+        </form>
+    </td>
+    <td>
+        <form action="/users/{{ $user->id }}/edit" method="get">
+            @csrf
+            <input type="submit" value="Modifier" name="update" class="modif">
+        </form>
+    </td>
+</tr>

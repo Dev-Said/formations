@@ -1,7 +1,20 @@
-<form action="/quizzes/{{ $quiz->id }}" method="post">
-@csrf
-@method('put')
-<input type="text" name="titre" value="{{ $quiz->titre }}">
-<input type="number" name="modules_id" value="{{ $quiz->modules_id }}">
-<input type="submit">
-</form>
+@extends('layouts.default')
+
+@section('content')
+
+<div class="edit">
+
+    <form action="/quizzes/{{ $quiz->id }}" method="post">
+        @csrf
+        @method('put')
+        <label for="titre">Titre</label>
+        <input type="text" name="titre" id="titre" value="{{ $quiz->titre }}">
+        <label for="modules_id">Modules_id</label>
+        <input type="number" name="modules_id" id="modules_id" value="{{ $quiz->modules_id }}">
+        <input type="submit">
+    </form>
+
+</div>
+
+
+@endsection

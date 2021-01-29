@@ -21,10 +21,11 @@ class QuestionFactory extends Factory
      */
     public function definition()
     {
+        static $i = 1;
         return [
-            'question' => $this->faker->sentence(5, true),
-            'num' => $this->faker->unique(true)->numberBetween(1, 30),
-            'quizzes_id' => $this->faker->numberBetween(1, 30),
+            'question' => $this->faker->sentence(3, true),
+            'num' => $i++,
+            'quizzes_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

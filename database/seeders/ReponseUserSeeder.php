@@ -54,5 +54,85 @@ class ReponseUserSeeder extends Seeder
             'reponses_id' => $faker->numberBetween(1, 50),
             'users_id' => $faker->numberBetween(1, 10),
         ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
+        DB::table('reponse_user')->insert([
+            'reponses_id' => $faker->numberBetween(1, 50),
+            'users_id' => $faker->numberBetween(1, 10),
+        ]);
     }
 }

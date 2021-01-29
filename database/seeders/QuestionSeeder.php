@@ -15,7 +15,7 @@ class QuestionSeeder extends Seeder
     public function run()
     {
         Question::factory()
-        ->times(10)
+        ->times(20)
         ->create();
     }
 }

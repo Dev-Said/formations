@@ -1,9 +1,22 @@
-<form action="/modules/{{ $module->id }}" method="post">
-@csrf
-@method('put')
-<input type="text" name="titre" value="{{ $module->titre }}">
-<input type="text" name="description" value="{{ $module->description }}">
-<input type="number" name="ordre" value="{{ $module->ordre }}">
-<input type="hidden" name="questions_id" value="{{ $module->questions_id }}">
-<input type="submit">
-</form>
+@extends('layouts.default')
+
+@section('content')
+
+<div class="edit">
+    <form action="/modules/{{ $module->id }}" method="post">
+        @csrf
+        @method('put')
+        <label for="titre">Titre</label>
+        <input type="text" name="titre" id="titre" value="{{ $module->titre }}">
+        <label for="description">Description</label>
+        <input type="description" name="description" id="description" value="{{ $module->description }}">
+        <label for="ordre">Ordre</label>
+        <input type="number" name="ordre" id="ordre" value="{{ $module->ordre }}">
+        <input type="hidden" name="formations_id" id="formations_id" value="1">
+        <input type="submit">
+    </form>
+
+</div>
+
+
+@endsection

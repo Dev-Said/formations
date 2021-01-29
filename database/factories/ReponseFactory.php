@@ -25,7 +25,7 @@ class ReponseFactory extends Factory
             'type' => $this->faker->randomElement($array = array ('radio', 'checkbox')) ,
             'text' => $this->faker->sentence(3, true),
             'is_correct' => $this->faker->numberBetween(0, 1),
-            'questions_id' => $this->faker->numberBetween(1, 100),
+            'questions_id' => $this->faker->numberBetween(1, 20),
         ];
     }
 }

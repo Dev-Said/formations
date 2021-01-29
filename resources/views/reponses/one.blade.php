@@ -1,11 +1,27 @@
-<div class="myClass" style="display: flex; align-items: center;">
-    <h2>{{$reponse->text}}</h2>&nbsp;&nbsp;&nbsp;&nbsp;
-    <h4>{{$reponse->type}}</h4>
-    <h4>{{$reponse->is_correct}}</h4>
-    <h4>{{$reponse->questions_id}}</h4>
-    <form action="/reponses/{{ $reponse->id }}" method="post">
-        @csrf
-        @method('delete')
-        <input type="submit" value="Supprimer" name="DELETE">
-    </form>
-</div>
+<tr>
+    <td>
+        {{$reponse->text}}
+    </td>
+    <td>
+        {{$reponse->type}}
+    </td>
+    <td>
+        {{$reponse->is_correct}}
+    </td>
+    <td>
+        {{$reponse->questions_id}}
+    </td>
+    <td>
+        <form action="/reponses/{{ $reponse->id }}" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" value="Supprimer" name="delete" class="supp">
+        </form>
+    </td>
+    <td>
+        <form action="/reponses/{{ $reponse->id }}/edit" method="get">
+            @csrf
+            <input type="submit" value="Modifier" name="update" class="modif">
+        </form>
+    </td>
+</tr>
