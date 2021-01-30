@@ -2,6 +2,8 @@
 
 @section('list')
 
+<h1>Users</h1>
+
 <div>
 
     <table>
@@ -14,6 +16,7 @@
                 <th>Email</th>
                 <th></th>
                 <th></th>
+                <th>A fait</th>
             </tr>
         </thead>
         <tbody>

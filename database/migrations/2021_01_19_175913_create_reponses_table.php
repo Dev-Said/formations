@@ -18,8 +18,8 @@ class CreateReponsesTable extends Migration
             $table->string('type', 255);
             $table->text('text');
             $table->boolean('is_correct');
-            $table->unsignedBigInteger('questions_id');
-            $table->foreign('questions_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->unsignedBigInteger('question_id');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->timestamps();
         });
     }

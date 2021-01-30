@@ -68,6 +68,13 @@
             color: #292b2c;
         }
 
+        .nouveau {
+            background-color: #4d5051;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
         .list, .edit {
             width: calc(100% - 200px);
             height: 100vh;
@@ -132,7 +139,7 @@
         }
 
         input[type=submit] {
-            height: 30px;
+            height: 45px;
             min-width: 90px;
             border-radius: 5px;
             display: block;
@@ -168,6 +175,12 @@
                 </a>
                 <a href="/reponses">
                     <li class="{{ 'reponses' == request()->path() ? 'active' : ' ' }}">Reponses</li>
+                </a>
+                <a href='{{ request()->path() ."/create" }}'>
+                    <li class="nouveau">Nouveau</li>
+                </a>
+                <a href="/register">
+                    <li>Inscription</li>
                 </a>
             </ul>
         </div>

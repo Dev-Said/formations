@@ -6,7 +6,7 @@
         {{$question->num}}
     </td>
     <td>
-        {{$question->quizzes_id}}
+        {{$question->quiz_id}}
     </td>
     <td>
         <form action="/questions/{{ $question->id }}" method="post">

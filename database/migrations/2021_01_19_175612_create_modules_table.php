@@ -18,7 +18,7 @@ class CreateModulesTable extends Migration
             $table->string('titre', 255);
             $table->text('description');
             $table->integer('ordre');
-            $table->integer('formations_id');
+            $table->integer('formation_id');
             $table->timestamps();
         });
     }

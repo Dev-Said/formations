@@ -27,4 +27,7 @@
             <input type="submit" value="Modifier" name="update" class="modif">
         </form>
     </td>
+    @foreach($user->quizzes as $quiz)
+    <td>{{ $quiz->titre }}</td>
+    @endforeach
 </tr>

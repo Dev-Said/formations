@@ -23,8 +23,8 @@ class QuizFactory extends Factory
     {
         static $i = 1;
         return [
-            'titre' => $this->faker->sentence(3, true),
-            'modules_id' => $i++,
+            'titre' => 'Quiz du module ' . $i,
+            'module_id' => $i++,
         ];
     }
 }

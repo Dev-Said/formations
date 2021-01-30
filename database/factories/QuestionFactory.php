@@ -25,7 +25,7 @@ class QuestionFactory extends Factory
         return [
             'question' => $this->faker->sentence(3, true),
             'num' => $i++,
-            'quizzes_id' => $this->faker->numberBetween(1, 10),
+            'quiz_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

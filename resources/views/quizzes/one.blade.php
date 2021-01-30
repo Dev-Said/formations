@@ -3,7 +3,7 @@
         {{$quiz->titre}}
     </td>
     <td>
-        {{$quiz->modules_id}}
+        {{$quiz->module_id}}
     </td>
     <td>
         <form action="/quizzes/{{ $quiz->id }}" method="post">
@@ -18,4 +18,7 @@
             <input type="submit" value="Modifier" name="update" class="modif">
         </form>
     </td>
+    @foreach($quiz->users as $user)
+    <td>{{ $user->nom }}</td>
+    @endforeach
 </tr>

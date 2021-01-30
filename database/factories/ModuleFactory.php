@@ -26,7 +26,7 @@ class ModuleFactory extends Factory
             'titre' => $this->faker->sentence(3, true),
             'description' => $this->faker->sentence(4, true),
             'ordre' => $i++,
-            'formations_id' => '1',
+            'formation_id' => '1',
         ];
     }
 }

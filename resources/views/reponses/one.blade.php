@@ -9,7 +9,7 @@
         {{$reponse->is_correct}}
     </td>
     <td>
-        {{$reponse->questions_id}}
+        {{$reponse->question_id}}
     </td>
     <td>
         <form action="/reponses/{{ $reponse->id }}" method="post">

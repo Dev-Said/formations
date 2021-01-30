@@ -2,6 +2,8 @@
 
 @section('list')
 
+<h1>Réponses</h1>
+
 <div>
 
     <table>
@@ -10,7 +12,7 @@
                 <th>Text</th>
                 <th>Type</th>
                 <th>Is_correct</th>
-                <th>Questions_id</th>
+                <th>Question_id</th>
                 <th></th>
                 <th></th>
             </tr>

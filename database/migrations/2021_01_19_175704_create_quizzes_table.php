@@ -16,8 +16,8 @@ class CreateQuizzesTable extends Migration
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
             $table->string('titre', 255);
-            $table->unsignedBigInteger('modules_id');
-            $table->foreign('modules_id')->references('id')->on('modules')->onDelete('cascade');
+            $table->unsignedBigInteger('module_id')->unique();
+            $table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
             $table->timestamps();
         });
     }

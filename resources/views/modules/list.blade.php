@@ -2,6 +2,8 @@
 
 @section('list')
 
+<h1>Modules</h1>
+
 <div>
 
     <table>

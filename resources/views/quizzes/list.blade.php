@@ -2,15 +2,18 @@
 
 @section('list')
 
+<h1>Quiz</h1>
+
 <div>
 
     <table>
         <thead>
             <tr>
                 <th>Tire</th>
-                <th>Modules_id</th>
-                <th>Supprimer</th>
-                <th>Modifier</th>
+                <th>Module_id</th>
+                <th></th>
+                <th></th>
+                <th>Participants</th>
             </tr>
         </thead>
         <tbody>
