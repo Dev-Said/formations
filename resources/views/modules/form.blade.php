@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="edit">
-
+<h2>Ajouter un module</h2>
     <form action="/modules" method="post">
         @csrf
         <label for="titre">Titre</label>

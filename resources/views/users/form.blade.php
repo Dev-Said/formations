@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="edit">
+<h2>Ajouter un users</h2>
 
     <form action="/users" method="post">
         @csrf

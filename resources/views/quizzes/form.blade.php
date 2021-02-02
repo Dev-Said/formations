@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="edit">
-
+<h2>Ajouter un quiz</h2>
     <form action="/quizzes" method="post">
         @csrf
 

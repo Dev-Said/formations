@@ -5,6 +5,8 @@
     <td>
         {{$module->description}}
     </td>
+
+    @if(Auth::check())
     <td>
         <form action="/modules/{{ $module->id }}" method="post">
             @csrf
@@ -18,4 +20,5 @@
             <input type="submit" value="Modifier" name="update" class="modif">
         </form>
     </td>
+    @endif
 </tr>

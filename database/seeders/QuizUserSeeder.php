@@ -48,7 +48,7 @@ class QuizUserSeeder extends Seeder
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '4',
-            'user_id' => '6',
+            'user_id' => '3',
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '5',
@@ -60,11 +60,11 @@ class QuizUserSeeder extends Seeder
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '6',
-            'user_id' => '7',
+            'user_id' => '4',
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '6',
-            'user_id' => '8',
+            'user_id' => '5',
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '6',
@@ -72,7 +72,7 @@ class QuizUserSeeder extends Seeder
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '7',
-            'user_id' => '1',
+            'user_id' => '3',
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '7',
@@ -80,11 +80,11 @@ class QuizUserSeeder extends Seeder
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '8',
-            'user_id' => '9',
+            'user_id' => '2',
         ]);
         DB::table('quiz_user')->insert([
             'quiz_id' => '9',
-            'user_id' => '1',
+            'user_id' => '5',
         ]);
 
     }

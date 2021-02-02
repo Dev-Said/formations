@@ -46,12 +46,12 @@ class User extends Authenticatable
 
     public function reponses()
     {
-        return $this->belongsToMany(Reponse::class);
+        return $this->belongsToMany(Reponse::class)->withTimestamps();
     }
 
     public function quizzes()
     {
-        return $this->belongsToMany(Quiz::class);
+        return $this->belongsToMany(Quiz::class)->withTimestamps();;
     }
 
 }

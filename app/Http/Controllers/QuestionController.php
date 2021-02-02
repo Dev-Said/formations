@@ -41,8 +41,8 @@ class QuestionController extends Controller
             strlen($request->question) ? $request->question : 'unknown';
         $question->num = $request->has('num') &&
             strlen($request->num) ? $request->num : 'unknown';
-        $question->quizzes_id = $request->has('quizzes_id') &&
-            strlen($request->quizzes_id) ? $request->quizzes_id : 'unknown';
+        $question->quiz_id = $request->has('quiz_id') &&
+            strlen($request->quiz_id) ? $request->quiz_id : 'unknown';
         $question->save();
 
         return redirect('/questions');
@@ -83,8 +83,8 @@ class QuestionController extends Controller
             strlen($request->question) ? $request->question : $question->question;
         $question->num = $request->has('num') &&
             strlen($request->num) ? $request->num : $question->num;
-        $question->quizzes_id = $request->has('quizzes_id') &&
-            strlen($request->quizzes_id) ? $request->quizzes_id : $question->quizzes_id;
+        $question->quiz_id = $request->has('quiz_id') &&
+            strlen($request->quiz_id) ? $request->quiz_id : $question->quiz_id;
 
         $question->save();
 

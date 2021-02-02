@@ -11,8 +11,8 @@
         <input type="text" name="question" id="question" value="{{ $question->question }}" required>
         <label for="num">Num</label>
         <input type="number" name="num" id="num" value="{{ $question->num }}" required>
-        <label for="quizzes_id">Quizzes_id</label>
-        <input type="number" name="quizzes_id" id="quizzes_id" value="{{ $question->quizzes_id }}" required>
+        <label for="quiz_id">Quiz_id</label>
+        <input type="number" name="quiz_id" id="quiz_id" value="{{ $question->quiz_id }}" required>
         <input type="submit">
     </form>
 

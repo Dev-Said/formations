@@ -28,6 +28,7 @@
             color: black;
             text-decoration: none;
             font-size: 16px;
+            letter-spacing: 1px;
         }
 
         .container {
@@ -51,6 +52,7 @@
             width: 200px;
             list-style-type: none;
             padding: 0;
+
         }
 
         li {
@@ -66,6 +68,7 @@
         .active {
             background-color: #f7f7f7;
             color: #292b2c;
+            letter-spacing: 1px;
         }
 
         .nouveau {
@@ -75,7 +78,13 @@
             letter-spacing: 1px;
         }
 
-        .list, .edit {
+        .connex {
+            letter-spacing: 1px;
+            background-color: #f5fbfe;
+        }
+
+        .list,
+        .edit {
             width: calc(100% - 200px);
             height: 100vh;
             overflow: scroll;
@@ -129,7 +138,8 @@
             color: #5b5b5b;
         }
 
-        .edit input, .edit select {
+        .edit input,
+        .edit select {
             margin: 15px 0;
             padding-left: 10px;
             width: 400px;
@@ -154,6 +164,16 @@
             background-color: #5bc0de;
             color: white;
         }
+
+        .formQuiz input {
+            margin: 15px 0;
+            /* padding-left: 10px; */
+            width: auto;
+            height: 20px;
+            border: #e1e1e1 solid 1px;
+        }
+
+
     </style>
 </head>
 
@@ -162,26 +182,40 @@
         <div class="nav">
             <ul>
                 <a href="/users">
-                    <li class="{{ 'users' == request()->path() ? 'active' : ' ' }}">Users</li>
+                    <li class="{{ 'users' == request()->path() ? 'active' : '' }}">Users</li>
                 </a>
                 <a href="/modules">
-                    <li class="{{ 'modules' == request()->path() ? 'active' : ' ' }}">Modules</li>
+                    <li class="{{ 'modules' == request()->path() ? 'active' : '' }}">Modules</li>
                 </a>
                 <a href="/quizzes">
-                    <li class="{{ 'quizzes' == request()->path() ? 'active' : ' ' }}">Quiz</li>
+                    <li class="{{ 'quizzes' == request()->path() ? 'active' : '' }}">Quiz</li>
                 </a>
                 <a href="/questions">
-                    <li class="{{ 'questions' == request()->path() ? 'active' : ' ' }}">Questions</li>
+                    <li class="{{ 'questions' == request()->path() ? 'active' : '' }}">Questions</li>
                 </a>
                 <a href="/reponses">
-                    <li class="{{ 'reponses' == request()->path() ? 'active' : ' ' }}">Reponses</li>
+                    <li class="{{ 'reponses' == request()->path() ? 'active' : '' }}">Reponses</li>
                 </a>
                 <a href='{{ request()->path() ."/create" }}'>
                     <li class="nouveau">Nouveau</li>
                 </a>
-                <a href="/register">
-                    <li>Inscription</li>
+
+                @if(Auth::check())
+                <a href="/dashboard">
+                    <li class="{{ 'dashboard' == request()->path() ? 'active' : 'connex' }}">Dashboard</li>
                 </a>
+                <a href="/logout">
+                    <li class="connex">Déconnexion</li>
+                </a>
+                @else
+                <a href="/login">
+                    <li class="connex">Connexion</li>
+                </a>
+                <a href="/register">
+                    <li class="connex">Inscription</li>
+                </a>
+                @endif
+
             </ul>
         </div>
 

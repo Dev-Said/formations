@@ -15,6 +15,7 @@
                 <th>Question_id</th>
                 <th></th>
                 <th></th>
+                <th>Question</th>
             </tr>
         </thead>
         <tbody>

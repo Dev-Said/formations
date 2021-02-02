@@ -1,11 +1,14 @@
 <?php
 
+use App\Models\Quiz;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\ReponseController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +25,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';
 
 
 
@@ -39,6 +40,7 @@ Route::resource('users', UserController::class);
 
 
 Route::group(['middleware' => ['auth']], function () {
+
     Route::resource('modules', ModuleController::class)->only([
         'create', 'store', 'edit', 'update', 'delete'
     ]);
@@ -54,4 +56,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', UserController::class)->only([
         'create', 'store', 'edit', 'update', 'delete'
     ]);
+
+    Route::get('/quizzes/quiz/{id}', [QuizController::class, 'quiz']);
+    Route::post('/reponses_user', [UserController::class, 'reponseUser']);
+    Route::get('/users/profile/{id}', [UserController::class, 'user']);
+    Route::get('/dashboard', [DashboardController::class, 'entry']);
+
+    Route::get('/logout', function () {
+        Auth::logout();
+        return redirect('/users');
+    });
+
 });

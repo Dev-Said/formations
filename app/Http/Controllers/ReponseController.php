@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Reponse;
+use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReponseController extends Controller
 {
@@ -25,7 +28,9 @@ class ReponseController extends Controller
      */
     public function create()
     {
-        return view('reponses.form');
+
+        $questions = Question::all();
+        return view('reponses.form', ['questions' => $questions]);
     }
 
     /**
@@ -43,8 +48,8 @@ class ReponseController extends Controller
             strlen($request->text) ? $request->text : 'unknown';
         $reponse->is_correct = $request->has('is_correct') &&
             strlen($request->is_correct) ? $request->is_correct : 'unknown';
-        $reponse->questions_id = $request->has('questions_id') &&
-            strlen($request->questions_id) ? $request->questions_id : 'unknown';
+        $reponse->question_id = $request->has('question_id') &&
+            strlen($request->question_id) ? $request->question_id : 'unknown';
         $reponse->save();
 
         return redirect('/reponses');
@@ -87,8 +92,8 @@ class ReponseController extends Controller
             strlen($request->text) ? $request->text : $reponse->text;
         $reponse->is_correct = $request->has('is_correct') &&
             strlen($request->is_correct) ? $request->is_correct : $reponse->is_correct;
-        $reponse->questions_id = $request->has('questions_id') &&
-            strlen($request->questions_id) ? $request->questions_id : $reponse->questions_id;
+        $reponse->question_id = $request->has('question_id') &&
+            strlen($request->question_id) ? $request->question_id : $reponse->question_id;
 
         $reponse->save();
 
@@ -104,6 +109,30 @@ class ReponseController extends Controller
     public function destroy(Reponse $reponse)
     {
         $reponse->delete();
+        return redirect('/reponses');
+    }
+
+
+    public function reponseUser(Request $request)
+    {
+        $auth = Auth::id();
+        $user = User::find($auth);
+        $data = $request->except('_token');
+        $newData = [];
+        $item = array();
+        foreach ($data as  $value) {
+
+            // $key = serialize(Str::of($key)->before('_'));
+       
+            // // dd(gettype($key));
+            // $item = array($key => $value);
+           
+            // array_push($newData, $item);
+            $user->reponses()->attach($value);
+        }
+        // dd($key);
+        
+
         return redirect('/reponses');
     }
 }

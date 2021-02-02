@@ -20,8 +20,8 @@
             <option value="{{$reponse->is_correct}}">{{$reponse->is_correct}}</option>
             <option value="{{ $reponse->is_correct === 1 ? 0 : 1 }}">{{ $reponse->is_correct === 1 ? 0 : 1 }}</option>
         </select>
-        <label for="questions_id">Questions_id</label>
-        <input type="number" name="questions_id" id="questions_id" value="{{ $reponse->questions_id }}" required>
+        <label for="question_id">Question_id</label>
+        <input type="number" name="question_id" id="question_id" value="{{ $reponse->question_id }}" required>
         <input type="submit">
     </form>
 

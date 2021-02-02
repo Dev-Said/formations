@@ -8,6 +8,8 @@
     <td>
         {{$question->quiz_id}}
     </td>
+
+    @if(Auth::check())
     <td>
         <form action="/questions/{{ $question->id }}" method="post">
             @csrf
@@ -21,4 +23,5 @@
             <input type="submit" value="Modifier" name="update" class="modif">
         </form>
     </td>
+    @endif
 </tr>

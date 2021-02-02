@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     {
         User::factory()
             ->has(Reponse::factory()->count(3), 'reponses')
-            ->times(10)
+            ->times(5)
             ->create();
     }
 }

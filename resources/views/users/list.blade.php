@@ -16,7 +16,7 @@
                 <th>Email</th>
                 <th></th>
                 <th></th>
-                <th>A fait</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>

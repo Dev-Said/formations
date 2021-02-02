@@ -13,6 +13,7 @@
                 <th>Module_id</th>
                 <th></th>
                 <th></th>
+                <th></th>
                 <th>Participants</th>
             </tr>
         </thead>

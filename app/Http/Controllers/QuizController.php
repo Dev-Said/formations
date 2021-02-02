@@ -39,9 +39,9 @@ class QuizController extends Controller
         $quiz = new Quiz;
         $quiz->titre = $request->has('titre') &&
             strlen($request->titre) ? $request->titre : 'unknown';
-        $quiz->modules_id = $request->has('modules_id') &&
-            strlen($request->modules_id) ? $request->modules_id : 'unknown';
-        
+        $quiz->module_id = $request->has('module_id') &&
+            strlen($request->module_id) ? $request->module_id : 'unknown';
+
         $quiz->save();
 
         return redirect('/quizzes');
@@ -80,9 +80,9 @@ class QuizController extends Controller
     {
         $quiz->titre = $request->has('titre') &&
             strlen($request->titre) ? $request->titre : $quiz->titre;
-        $quiz->modules_id = $request->has('modules_id') &&
-            strlen($request->modules_id) ? $request->modules_id : $quiz->modules_id;
-    
+        $quiz->module_id = $request->has('module_id') &&
+            strlen($request->module_id) ? $request->module_id : $quiz->module_id;
+
         $quiz->save();
 
         return redirect('/quizzes');
@@ -98,5 +98,13 @@ class QuizController extends Controller
     {
         $quiz->delete();
         return redirect('/quizzes');
+    }
+
+
+
+    public function quiz($id)
+    {
+        $quiz = Quiz::find($id);
+        return view('quizzes.quiz', ['quiz' => $quiz]);
     }
 }

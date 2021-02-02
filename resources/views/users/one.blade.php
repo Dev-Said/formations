@@ -14,6 +14,9 @@
     <td>
         {{$user->email}}
     </td>
+
+
+    @if(Auth::check())
     <td>
         <form action="/users/{{ $user->id }}" method="post">
             @csrf
@@ -27,7 +30,11 @@
             <input type="submit" value="Modifier" name="update" class="modif">
         </form>
     </td>
-    @foreach($user->quizzes as $quiz)
-    <td>{{ $quiz->titre }}</td>
-    @endforeach
+    <td>
+        <form action="/users/profile/{{ $user->id }}" method="get">
+            @csrf
+            <input type="submit" value="Voir le profil" name="update" class="gris">
+        </form>
+    </td>
+    @endif
 </tr>
