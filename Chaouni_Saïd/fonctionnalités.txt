@@ -1,0 +1,29 @@
+Fonctionnalités:
+
+_enregistrement des opérations create, update, delete, avec
+l'id de l'user, l'id du model et le nom du model dans le model remembers
+_gestion d'un quiz avec les opérations de créations de quiz, de questions et de réponses
+_creation des vues pour répondre au quiz
+_limitation des droits d'accès à certaines parties du site et à certaines fonctionnalités.
+_creation d'un dashboard avec quelques stats
+_utilisation de breeze pour gérer l'authentification
+_creation des factories et seeders pour ajouter des données dans la db
+
+
+Etapes pour construire un quiz:
+
+Sélectionner Quiz et ensuite cliquer sur nouveau pour créer un quiz
+Donner un titre au quiz et sélectionner un module qui n'a pas encore de quiz
+si la liste est vide c'est que tous les modules ont un quiz.
+Il faudra dabord créer un nouveau module alors.
+
+Ensuite créer une question en allant sur Question puis nouveau.
+Ecrire la question et sélectionner un quiz pour cette question
+
+Ensuite créer la réponse pour cette question en allant 
+sur Reponses et nouveau.
+Choisir la question, donner une réponse et completer les reste.
+
+On devra créer autant de question que l'on souhaite par quiz et
+autant de réponse que l'on souhaite par question.
+
